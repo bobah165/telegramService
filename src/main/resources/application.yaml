@@ -1,0 +1,58 @@
+server:
+  port: 8093
+
+bot:
+  username: my_awesome_car_bot
+  token: 2070228409:AAH5sOZ_tbstAwYTIVSoxjI8z26UtL639DA
+  webHookPath: https://5f88-188-243-23-119.ngrok-free.app
+  api:
+    baseurlForCarHandler: http://localhost:8092/api/
+    subPath:
+      car-handler: /car
+      bot-state: /botState
+      cost-handler: /costs
+      metrics: /metrics
+      local: /local
+      car-maintenance: /maintenance
+
+buttons:
+  callback:
+    statistics: '{
+       mileage: "button.mileage",
+       gas:  "button.gas",
+       spares: "button.spares"
+    }'
+    transmission: '{
+        mechanical: "transmission.mechanic",
+        automatic: "transmission.automate",
+        robot: "transmission.robot"
+    }'
+    language: '{
+        russia: "language.russia",
+        english: "language.english"
+    }'
+  keyboard:
+    main-menu:
+      'button.my.car,
+       button.my.costs,
+       button.my.statistics,
+       button.settings'
+    costs-menu:
+      'button.mileage,
+       button.gas,
+       button.spares,
+       button.back.to.main.menu'
+    car-menu:
+      'button.register.car,
+       button.car.inform,
+       button.back.to.main.menu'
+    settings-menu:
+      'button.language,
+       button.car.maintenance,
+       button.back.to.main.menu'
+    car-maintenance:
+      'button.total,
+       button.remind,
+       button.service.mileage,
+       button.maintenance.info,
+       button.back.to.settings.menu'
