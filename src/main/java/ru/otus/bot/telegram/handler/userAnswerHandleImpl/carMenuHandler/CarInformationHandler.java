@@ -3,11 +3,11 @@ package ru.otus.bot.telegram.handler.userAnswerHandleImpl.carMenuHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import ru.otus.bot.telegram.builder.MessageBuilder;
 import ru.otus.bot.telegram.data.Car;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.handler.UserAnswerHandler;
-import ru.otus.bot.telegram.integration.publisher.CarHandlerRequestService;
-import ru.otus.bot.telegram.service.MessageBuilder;
+import ru.otus.bot.telegram.integration.http.CarHandlerRequestService;
 
 
 @Component

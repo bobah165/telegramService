@@ -6,7 +6,7 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import ru.otus.bot.telegram.config.LanguageProperty;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.handler.UserAnswerHandler;
-import ru.otus.bot.telegram.integration.publisher.LanguageRequestService;
+import ru.otus.bot.telegram.integration.http.LanguageRequestService;
 import ru.otus.bot.telegram.service.LanguageTranslatorService;
 import ru.otus.bot.telegram.utils.SettingMenuFactory;
 

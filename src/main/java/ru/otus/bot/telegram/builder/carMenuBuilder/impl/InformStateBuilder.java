@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.otus.bot.telegram.builder.carMenuBuilder.CarMenuStateBuilder;
 import ru.otus.bot.telegram.data.enums.BotState;
-import ru.otus.bot.telegram.integration.publisher.CarHandlerRequestService;
+import ru.otus.bot.telegram.integration.http.CarHandlerRequestService;
 import ru.otus.bot.telegram.service.BotStateStorageService;
 import ru.otus.bot.telegram.storage.CarCacheService;
 

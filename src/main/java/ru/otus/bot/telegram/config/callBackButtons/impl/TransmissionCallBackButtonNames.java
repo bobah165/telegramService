@@ -5,12 +5,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import ru.otus.bot.telegram.builder.MessageBuilder;
 import ru.otus.bot.telegram.config.callBackButtons.CallBackButtonNames;
 import ru.otus.bot.telegram.data.ButtonSateWrapper;
 import ru.otus.bot.telegram.data.CallBackButtons;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.data.enums.CallBackMenu;
-import ru.otus.bot.telegram.service.MessageBuilder;
 
 @Component
 public class TransmissionCallBackButtonNames implements CallBackButtonNames {

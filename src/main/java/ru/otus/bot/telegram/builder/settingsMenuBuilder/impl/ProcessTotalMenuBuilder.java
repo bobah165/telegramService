@@ -6,7 +6,7 @@ import ru.otus.bot.telegram.builder.settingsMenuBuilder.SettingMenuBuilder;
 import ru.otus.bot.telegram.data.CarMaintenance;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.data.enums.MaintenanceType;
-import ru.otus.bot.telegram.integration.publisher.CarMaintenanceRequestService;
+import ru.otus.bot.telegram.integration.http.CarMaintenanceRequestService;
 import ru.otus.bot.telegram.service.BotStateStorageService;
 
 

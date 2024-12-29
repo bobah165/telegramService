@@ -4,12 +4,12 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import ru.otus.bot.telegram.builder.MessageBuilder;
 import ru.otus.bot.telegram.data.CarMaintenance;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.data.enums.MaintenanceType;
 import ru.otus.bot.telegram.handler.UserAnswerHandler;
-import ru.otus.bot.telegram.integration.publisher.CarMaintenanceRequestService;
-import ru.otus.bot.telegram.service.MessageBuilder;
+import ru.otus.bot.telegram.integration.http.CarMaintenanceRequestService;
 import ru.otus.bot.telegram.utils.SettingMenuFactory;
 
 

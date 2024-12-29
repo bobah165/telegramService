@@ -8,6 +8,7 @@ import ru.otus.bot.telegram.data.enums.MetricType;
 @Data
 @Accessors(chain = true)
 public class Metrics {
+    private String id;
     private String userId;
     private MetricType metricType;
     private String value;

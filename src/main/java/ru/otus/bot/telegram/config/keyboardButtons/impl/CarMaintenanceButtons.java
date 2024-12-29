@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import ru.otus.bot.telegram.builder.MessageBuilder;
 import ru.otus.bot.telegram.config.keyboardButtons.KeyboardButtonNames;
 import ru.otus.bot.telegram.data.KeyboardButtonName;
 import ru.otus.bot.telegram.data.enums.KeyboardMenuButtons;
-import ru.otus.bot.telegram.service.MessageBuilder;
 
 
 @Component

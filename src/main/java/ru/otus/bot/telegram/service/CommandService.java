@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
+import ru.otus.bot.telegram.builder.MessageBuilder;
 import ru.otus.bot.telegram.data.enums.BotApiNames;
 import ru.otus.bot.telegram.utils.BotApiFactory;
 

@@ -7,7 +7,7 @@ import ru.otus.bot.telegram.builder.statisticMenuBuilder.StatisticsMenuBuilder;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.data.enums.MetricType;
 import ru.otus.bot.telegram.handler.UserAnswerHandler;
-import ru.otus.bot.telegram.integration.publisher.MetricsRequestService;
+import ru.otus.bot.telegram.integration.http.MetricsRequestService;
 import ru.otus.bot.telegram.service.LanguageTranslatorService;
 
 

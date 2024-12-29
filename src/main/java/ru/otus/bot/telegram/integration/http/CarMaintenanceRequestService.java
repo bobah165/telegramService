@@ -1,4 +1,4 @@
-package ru.otus.bot.telegram.integration.publisher;
+package ru.otus.bot.telegram.integration.http;
 
 import java.util.ArrayList;
 import java.util.List;

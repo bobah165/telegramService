@@ -1,4 +1,4 @@
-package ru.otus.bot.telegram.integration.publisher;
+package ru.otus.bot.telegram.integration.http;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

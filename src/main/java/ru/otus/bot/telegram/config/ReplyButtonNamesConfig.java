@@ -5,9 +5,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import ru.otus.bot.telegram.builder.MessageBuilder;
 import ru.otus.bot.telegram.data.KeyboardButtonName;
 import ru.otus.bot.telegram.data.enums.BotState;
-import ru.otus.bot.telegram.service.MessageBuilder;
 
 @Component
 @RequiredArgsConstructor
