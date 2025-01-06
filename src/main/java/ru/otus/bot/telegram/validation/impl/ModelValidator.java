@@ -16,10 +16,10 @@ public class ModelValidator implements UserAnswerValidator {
 
     @Override
     public void validateUserAnswer(String usersAnswer, String chatId) {
-        final Pattern pattern = Pattern.compile("\\w+");
-        if (!pattern.matcher(usersAnswer).matches()) {
-            throw new UserAnswerValidationException(chatId, translator.translateMessage("model.wrong.format"));
-        }
+//        final Pattern pattern = Pattern.compile("\\w+");
+//        if (!pattern.matcher(usersAnswer).matches()) {
+//            throw new UserAnswerValidationException(chatId, translator.translateMessage("model.wrong.format"));
+//        }
     }
 
     @Override

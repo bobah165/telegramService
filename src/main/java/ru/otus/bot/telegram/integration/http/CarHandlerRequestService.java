@@ -24,6 +24,6 @@ public class CarHandlerRequestService {
 
     public Car getCarFromCarHandler(Long id) {
         ParameterizedTypeReference<Car> typeReference = new ParameterizedTypeReference<>() {};
-        return requestService.get(carHandlerConfig.getCarSubPath() + "/" + id, typeReference);
+        return requestService.get(carHandlerConfig.getBaseurlForCarService() + carHandlerConfig.getCarSubPath() + "/" + id, typeReference);
     }
 }

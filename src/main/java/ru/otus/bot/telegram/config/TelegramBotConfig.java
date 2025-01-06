@@ -15,6 +15,4 @@ public class TelegramBotConfig {
     private String token;
     @Value("${bot.webHookPath}")
     private String path;
-    @Value("${bot.api.baseurlForCarHandler}")
-    private String baseurlForCarHandler;
 }

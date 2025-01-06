@@ -7,19 +7,18 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import ru.otus.bot.telegram.config.apiConfig.CarMaintenanceConfig;
 import ru.otus.bot.telegram.data.CarMaintenance;
+import ru.otus.bot.telegram.service.RequestService;
 
 @Service
 @RequiredArgsConstructor
 public class CarMaintenanceRequestService {
 
     private final CarMaintenanceConfig config;
+    private final RequestService requestService;
 
-
-    public void sendCarMaintenance(CarMaintenance carMaintenance){
-
-    }
 
     public List<CarMaintenance> getCarMaintenance(String id){
-        return new ArrayList<>();
+        ParameterizedTypeReference<List<CarMaintenance>> typeReference = new ParameterizedTypeReference<>() {};
+        return requestService.get(config.getBaseurlForCarMaintenanceService() + config.getMaintenanceSubPath() + "/" + id, typeReference);
     }
 }

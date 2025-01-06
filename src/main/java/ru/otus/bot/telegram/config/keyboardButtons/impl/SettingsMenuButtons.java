@@ -11,25 +11,26 @@ import ru.otus.bot.telegram.data.enums.KeyboardMenuButtons;
 
 
 @Component
-public class SettingsMenuButtons implements KeyboardButtonNames {
-    private final List<String> buttonNames;
-    private final MessageBuilder messageBuilder;
-
-    public SettingsMenuButtons(@Value("${buttons.keyboard.settings-menu}") List<String> buttonNames, MessageBuilder messageBuilder) {
-        this.buttonNames = buttonNames;
-        this.messageBuilder = messageBuilder;
-    }
-
-    @Override
-    public List<KeyboardButtonName> getButtonNames() {
-        return buttonNames.stream()
-                          .map(messageBuilder::getTranslatedMessage)
-                          .map(button->new KeyboardButtonName().setName(button))
-                          .collect(Collectors.toList());
-    }
-
-    @Override
-    public KeyboardMenuButtons getButton() {
-        return KeyboardMenuButtons.SETTINGS_MENU;
-    }
+public class SettingsMenuButtons {
+//  implements KeyboardButtonNames {
+//    private final List<String> buttonNames;
+//    private final MessageBuilder messageBuilder;
+//
+//    public SettingsMenuButtons(@Value("${buttons.keyboard.settings-menu}") List<String> buttonNames, MessageBuilder messageBuilder) {
+//        this.buttonNames = buttonNames;
+//        this.messageBuilder = messageBuilder;
+//    }
+//
+//    @Override
+//    public List<KeyboardButtonName> getButtonNames() {
+//        return buttonNames.stream()
+//                          .map(messageBuilder::getTranslatedMessage)
+//                          .map(button->new KeyboardButtonName().setName(button))
+//                          .collect(Collectors.toList());
+//    }
+//
+//    @Override
+//    public KeyboardMenuButtons getButton() {
+//        return KeyboardMenuButtons.SETTINGS_MENU;
+//    }
 }

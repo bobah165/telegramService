@@ -19,9 +19,9 @@ public class ProcessTotalMenuBuilder implements SettingMenuBuilder {
     @Override
     public void processUserAnswer(long userId, String userAnswer) {
         botStateStorageService.setCurrentBotState(userId, BotState.MEINTENANCE);
-        requestService.sendCarMaintenance(new CarMaintenance().setUserId(String.valueOf(userId))
-                                                              .setValue(Integer.parseInt(userAnswer))
-                                                              .setMaintenanceType(MaintenanceType.TOTAL));
+//        requestService.sendCarMaintenance(new CarMaintenance().setUserId(String.valueOf(userId))
+//                                                              .setValue(Integer.parseInt(userAnswer))
+//                                                              .setMaintenanceType(MaintenanceType.TOTAL));
     }
 
     @Override

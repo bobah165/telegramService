@@ -3,6 +3,7 @@ package ru.otus.bot.telegram.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.utils.UserAnswerHandlerFactory;

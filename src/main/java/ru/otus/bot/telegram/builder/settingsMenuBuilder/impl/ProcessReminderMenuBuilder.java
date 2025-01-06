@@ -7,6 +7,7 @@ import ru.otus.bot.telegram.data.CarMaintenance;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.data.enums.MaintenanceType;
 import ru.otus.bot.telegram.integration.http.CarMaintenanceRequestService;
+import ru.otus.bot.telegram.integration.kafka.publisher.MetricsProducerService;
 import ru.otus.bot.telegram.service.BotStateStorageService;
 
 
@@ -19,9 +20,9 @@ public class ProcessReminderMenuBuilder implements SettingMenuBuilder {
     @Override
     public void processUserAnswer(long userId, String userAnswer) {
         botStateStorageService.setCurrentBotState(userId, BotState.MEINTENANCE);
-        requestService.sendCarMaintenance(new CarMaintenance().setUserId(String.valueOf(userId))
-                                                              .setValue(Integer.parseInt(userAnswer))
-                                                              .setMaintenanceType(MaintenanceType.REMIND));
+//        requestService.sendCarMaintenance(new CarMaintenance().setUserId(String.valueOf(userId))
+//                                                              .setValue(Integer.parseInt(userAnswer))
+//                                                              .setMaintenanceType(MaintenanceType.REMIND));
     }
 
     @Override

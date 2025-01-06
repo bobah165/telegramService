@@ -3,7 +3,7 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: localhost:29092
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER}
     consumer:
       group-id: "bot-1"
       auto-offset-reset: earliest
@@ -28,7 +28,7 @@ spring:
 
 topic:
   producer:
-    metric: send-pay-to-warehouse-event
+    metric: send-telegram-to-metric-event
     car: send-telegram-to-car-save-event
     state: send-telegram-to-bot-state-event
 
@@ -36,16 +36,16 @@ topic:
 bot:
   username: my_awesome_car_bot
   token: 2070228409:AAH5sOZ_tbstAwYTIVSoxjI8z26UtL639DA
-  webHookPath: https://5f88-188-243-23-119.ngrok-free.app
+  webHookPath: ${WEB_HOOK}
   api:
-    baseurlForCarHandler: http://localhost:8092/api/
+    baseurlForCarService: ${CAR_SERVICE_BASE_URL}
+    baseurlForMetricService: ${METRIC_SERVICE_BASE_URL}
+    baseurlForBotStateService: ${BOT_STATE_SERVICE_BASE_URL}
     subPath:
-      car-handler: /car
-      bot-state: /botState
-      cost-handler: /costs
-      metrics: /metrics
-      local: /local
-      car-maintenance: /maintenance
+      car-handler: api/car
+      bot-state: api/botState
+      cost-handler: api/costs
+      metrics: api/metrics
 
 buttons:
   callback:
@@ -59,16 +59,11 @@ buttons:
         automatic: "transmission.automate",
         robot: "transmission.robot"
     }'
-    language: '{
-        russia: "language.russia",
-        english: "language.english"
-    }'
   keyboard:
     main-menu:
       'button.my.car,
        button.my.costs,
-       button.my.statistics,
-       button.settings'
+       button.my.statistics'
     costs-menu:
       'button.mileage,
        button.gas,
@@ -77,10 +72,6 @@ buttons:
     car-menu:
       'button.register.car,
        button.car.inform,
-       button.back.to.main.menu'
-    settings-menu:
-      'button.language,
-       button.car.maintenance,
        button.back.to.main.menu'
     car-maintenance:
       'button.total,

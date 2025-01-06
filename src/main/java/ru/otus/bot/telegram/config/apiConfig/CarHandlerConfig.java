@@ -11,4 +11,7 @@ import org.springframework.stereotype.Component;
 public class CarHandlerConfig {
     @Value("${bot.api.subPath.car-handler}")
     private String carSubPath;
+
+    @Value("${bot.api.baseurlForCarService}")
+    private String baseurlForCarService;
 }

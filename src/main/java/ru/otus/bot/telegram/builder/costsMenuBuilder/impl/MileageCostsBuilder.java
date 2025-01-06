@@ -1,6 +1,7 @@
 package ru.otus.bot.telegram.builder.costsMenuBuilder.impl;
 
 import java.time.LocalDate;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.otus.bot.telegram.builder.costsMenuBuilder.CostsMenuStateBuilder;
@@ -8,6 +9,7 @@ import ru.otus.bot.telegram.data.Metrics;
 import ru.otus.bot.telegram.data.enums.BotState;
 import ru.otus.bot.telegram.data.enums.MetricType;
 import ru.otus.bot.telegram.integration.http.MetricsRequestService;
+import ru.otus.bot.telegram.integration.kafka.publisher.MetricsProducerService;
 import ru.otus.bot.telegram.service.BotStateStorageService;
 
 
@@ -15,14 +17,15 @@ import ru.otus.bot.telegram.service.BotStateStorageService;
 @RequiredArgsConstructor
 public class MileageCostsBuilder implements CostsMenuStateBuilder {
     private final BotStateStorageService botStateStorageService;
-    private final MetricsRequestService metricsRequestService;
+    private final MetricsProducerService metricsProducerService;
 
     @Override
     public void processUserAnswer(long userId, String usersAnswer) {
         botStateStorageService.setCurrentBotState(userId, BotState.MY_COSTS);
-        metricsRequestService.sendMetricsToCarHandler(new Metrics().setUserId(String.valueOf(userId))
+        metricsProducerService.sendMetric(new Metrics().setUserId(String.valueOf(userId))
                                                                    .setMetricType(MetricType.MILEAGE)
                                                                    .setValue(usersAnswer)
+                                                                    .setId(UUID.randomUUID().toString())
                                                                    .setDate(LocalDate.now()));
     }
 

@@ -1,0 +1,43 @@
+replicas:
+  _default: 1
+  dev: 1
+
+selector : dev
+
+name:
+  app: telegram-helm
+
+service:
+  nameApp: telegram-helm-service
+  portName: helm-telegram
+  type: NodePort
+  port: 80
+  targetPort: 8000
+
+kafka:
+  portName: port-delivery-kafka
+  type: NodePort
+  port: 9092
+  targetPort: 9092
+  bootstrap: kafka:9092
+
+bot:
+  webHookPath: https://96d1-188-243-23-119.ngrok-free.app
+
+image:
+  repository: bobah165/telegramservice
+  tag: v7
+
+ingress:
+  enabled: false
+  name: "telegram-service-helm-ingress"
+  className: nginx
+  host: "arch.homework.telegram"
+  pathType: Prefix
+  path: /
+
+url:
+  baseurlForCarService: http://car-helm-service/
+  baseurlForMetricService: http://metric-helm-service/api/
+  baseurlForBotStateService: http://bot-state-helm-service/api/
+

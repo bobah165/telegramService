@@ -11,4 +11,7 @@ import org.springframework.stereotype.Component;
 public class MetricsConfig {
     @Value("${bot.api.subPath.metrics}")
     private String metricSubPath;
+
+    @Value("${bot.api.baseurlForMetricService}")
+    private String baseurlForMetricService;
 }

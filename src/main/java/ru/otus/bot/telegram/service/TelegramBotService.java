@@ -1,5 +1,6 @@
 package ru.otus.bot.telegram.service;
 
+
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.updates.SetWebhook;
@@ -15,7 +16,7 @@ public class TelegramBotService extends SpringWebhookBot {
     private final TelegramBotConfig botConfig;
 
     public TelegramBotService(UpdateService updateService, SetWebhook setWebhook, TelegramBotConfig botConfig) {
-        super(setWebhook, botConfig.getToken());
+        super(setWebhook);
         this.updateService = updateService;
         this.botConfig = botConfig;
     }
@@ -33,5 +34,10 @@ public class TelegramBotService extends SpringWebhookBot {
     @Override
     public String getBotUsername() {
         return botConfig.getUsername();
+    }
+
+    @Override
+    public String getBotToken() {
+        return botConfig.getToken();
     }
 }

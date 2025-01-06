@@ -19,9 +19,9 @@ public class ProcessScheduledMenuBuilder implements SettingMenuBuilder {
     @Override
     public void processUserAnswer(long userId, String userAnswer) {
         botStateStorageService.setCurrentBotState(userId, BotState.MEINTENANCE);
-        requestService.sendCarMaintenance(new CarMaintenance().setUserId(String.valueOf(userId))
-                                                              .setValue(Integer.parseInt(userAnswer))
-                                                              .setMaintenanceType(MaintenanceType.SCHEDULE));
+//        requestService.sendCarMaintenance(new CarMaintenance().setUserId(String.valueOf(userId))
+//                                                              .setValue(Integer.parseInt(userAnswer))
+//                                                              .setMaintenanceType(MaintenanceType.SCHEDULE));
     }
 
     @Override

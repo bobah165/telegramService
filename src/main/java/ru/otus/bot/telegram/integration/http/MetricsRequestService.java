@@ -6,19 +6,19 @@ import org.springframework.stereotype.Component;
 import ru.otus.bot.telegram.config.apiConfig.MetricsConfig;
 import ru.otus.bot.telegram.data.Metrics;
 import ru.otus.bot.telegram.data.enums.MetricType;
+import ru.otus.bot.telegram.service.RequestService;
 
 @Component
 @RequiredArgsConstructor
 public class MetricsRequestService {
 
+    private final RequestService requestService;
     private final MetricsConfig metricsConfig;
 
 
-    public void sendMetricsToCarHandler(Metrics metrics) {
-    }
-
-
     public Metrics getMetricsFromCarHandler(String userId, MetricType metricType) {
-        return new Metrics();
+        ParameterizedTypeReference<Metrics> typeReference = new ParameterizedTypeReference<>() {};
+        String uri = metricsConfig.getBaseurlForMetricService() + metricsConfig.getMetricSubPath() + "/" + userId + "/" + metricType;
+        return requestService.get(uri, typeReference);
     }
 }

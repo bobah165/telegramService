@@ -11,4 +11,7 @@ import org.springframework.stereotype.Component;
 public class BotStateConfig {
     @Value("${bot.api.subPath.bot-state}")
     private String boStateSubPath;
+
+    @Value("${bot.api.baseurlForBotStateService}")
+    private String baseurlForBotStateService;
 }

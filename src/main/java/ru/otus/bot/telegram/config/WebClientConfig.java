@@ -11,12 +11,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 @RequiredArgsConstructor
 public class WebClientConfig {
-    private final TelegramBotConfig telegramBotConfig;
 
     @Bean
     public WebClient webClientForCarHandler() {
         return WebClient.builder()
-                        .baseUrl(telegramBotConfig.getBaseurlForCarHandler())
                         .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE, MediaType.TEXT_PLAIN_VALUE)
                         .clientConnector(new ReactorClientHttpConnector())
                         .build();
