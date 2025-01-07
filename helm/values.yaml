@@ -22,17 +22,17 @@ kafka:
   bootstrap: kafka:9092
 
 bot:
-  webHookPath: https://96d1-188-243-23-119.ngrok-free.app
+  webHookPath: https://88ef-188-243-23-119.ngrok-free.app
 
 image:
   repository: bobah165/telegramservice
-  tag: v7
+  tag: v8
 
 ingress:
   enabled: false
   name: "telegram-service-helm-ingress"
   className: nginx
-  host: "arch.homework.telegram"
+  host: "arch.homework"
   pathType: Prefix
   path: /
 
