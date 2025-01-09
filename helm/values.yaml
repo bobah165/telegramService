@@ -38,6 +38,6 @@ ingress:
 
 url:
   baseurlForCarService: http://car-helm-service/
-  baseurlForMetricService: http://metric-helm-service/api/
-  baseurlForBotStateService: http://bot-state-helm-service/api/
+  baseurlForMetricService: http://metric-helm-service/
+  baseurlForBotStateService: http://bot-state-helm-service/
 
